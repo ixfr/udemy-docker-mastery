@@ -2,8 +2,18 @@
 
 # This dir contains a Node.js app, you need to get it running in a container
 # No modifications to the app should be necessary, only edit this Dockerfile
+FROM node:latest
 
 # Overview of this assignment
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+ENV PORT 8080
+EXPOSE 8080
+CMD [ "npm", "start" ]
+
 # use the instructions from developer below to create a working Dockerfile
 # feel free to add command inline below or use a new file, up to you (but must be named Dockerfile)
 # once Dockerfile builds correctly, start container locally to make sure it works on http://localhost
