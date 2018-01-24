@@ -11,6 +11,9 @@ services:
       - POSTGRES_PASSWORD=test
   drupal:
     image: 'droopy'
+    # build:
+      # context: .
+      # dockerfile: drupal.Dockerfile
     build: .
     ports:
       - '8080:80'
