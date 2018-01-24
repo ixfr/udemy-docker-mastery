@@ -10,7 +10,10 @@ services:
     environment:
       - POSTGRES_PASSWORD=test
   drupal:
-    image: 'drupal'
+    # image: 'drupal'
+    build:
+      context: .
+      dockerfile: drupal.Dockerfile    
     ports:
       - '8080:80'
     volumes:
