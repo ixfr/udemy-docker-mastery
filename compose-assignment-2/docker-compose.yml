@@ -10,7 +10,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=test
   drupal:
-    # image: 'drupal'
+    image: 'my-drupal'
     build:
       context: .
       dockerfile: drupal.Dockerfile    
